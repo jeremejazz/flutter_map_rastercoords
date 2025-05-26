@@ -1,18 +1,15 @@
 
 
-import 'package:flutter_map_rastercoords/rastercoords.dart';
+
+import 'package:flutter_map_rastercoords/flutter_map_rastercoords.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:latlong2/latlong.dart';
-
-
 
 void main(){
 
   test("Should Get the zoom level", (){
     var rc = RasterCoords(width: 1024, height: 1024);
     expect(rc.zoom, 2.0);
-
-
 
   });
 
