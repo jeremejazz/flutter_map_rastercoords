@@ -54,11 +54,11 @@ class RasterCoords {
   ///
   /// returns a [Point] object with x and y coordinates
   /// of the pixel
-  Point latLngToPixel(LatLng latLng) {
+  Point<double> latLngToPixel(LatLng latLng) {
     final (lat, lng) = (latLng.latitude, latLng.longitude);
     final (double x, double y) = _crsSimple.transform(lng, lat, scale);
 
-    return Point(x, y);
+    return Point<double>(x, y);
   }
 
   /// Gets the geographical bounding box ([LatLngBounds]) that encompasses
