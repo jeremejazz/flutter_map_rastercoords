@@ -1,5 +1,7 @@
 # flutter_map_rastercoords
 
+[![Main](https://github.com/jeremejazz/flutter_map_rastercoords/actions/workflows/main.yml/badge.svg)](https://github.com/jeremejazz/flutter_map_rastercoords/actions/workflows/main.yml)
+
 ## Features
 
 TODO: List what your package can do. Maybe include images, gifs, or videos.
