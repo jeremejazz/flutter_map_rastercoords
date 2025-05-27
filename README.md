@@ -1,8 +1,8 @@
 # flutter_map_rastercoords
 
-## Features
+A [flutter_map](https://pub.dev/packages/flutter_map) plugin for plain image map projection to display large images using tiles generated with gdal2tiles.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Inspired from [leaflet-rastercoords](https://github.com/commenthol/leaflet-rastercoords).
 
 ## Getting started
 
