@@ -1,14 +1,23 @@
 name: flutter_map_rastercoords
 description: "Flutter map utility library for non-geographic map projections using CRS Simple"
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/jeremejazz/flutter_map_rastercoords
 repository: https://github.com/jeremejazz/flutter_map_rastercoords
 topics:
   - flutter-map
   - map
   - projection
+  - coordinates
+  - leaflet
 funding:
-  - https://ko-fi.com/jereme
+  - https://ko-fi.com/jereme_me
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
 
 environment:
   sdk: ">=3.6.0 <4.0.0"
