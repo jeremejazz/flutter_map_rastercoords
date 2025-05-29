@@ -1,27 +1,38 @@
 # flutter_map_rastercoords
 
-A [flutter_map](https://pub.dev/packages/flutter_map) plugin for plain image map projection to display large images using tiles generated with [gdal2tiles](https://gdal.org/en/stable/programs/gdal2tiles.html).
+A [flutter_map](https://pub.dev/packages/flutter_map) plugin for displaying large, non-geographical images as tiled maps using a simple coordinate reference system. Tiles should be generated using [gdal2tiles](https://gdal.org/en/stable/programs/gdal2tiles.html) with the `--xyz` and `-p raster` options.
 
 Inspired from [leaflet-rastercoords](https://github.com/commenthol/leaflet-rastercoords).
 
 ## Features
 - Provides utilities to convert between pixel coordinates and LatLng.
-- Helper method to set up flutter_map option such as `getMaxBounds`
+- Helper utilities for `flutter_map` setup, including:
+  - `getMaxBounds()` for constraining the map view.
+  - `zoom` property that returns the optimal zoom level based on image dimensions.
 
 
 ## Usage
 
-1. Add `flutter_map_rastercoords` to your `pubspec.yaml`:
+1. Generate map tiles from your "large" image using [gdal2tiles.py](https://gdal.org/en/stable/programs/gdal2tiles.html)
+    ```sh
+    gdal2tiles.py --xyz -p raster -z 0-3 -w none <image> <tiles dir>
+    ```
+2. Serve the generated tiles locally, for example using [serve](https://www.npmjs.com/package/serve) 
+    ```
+    serve -l 8000
+    ```
+
+3. Add `flutter_map_rastercoords` to your `pubspec.yaml`:
    ```yaml
    dependencies:
      flutter_map_rastercoords: ^0.0.1
    ```
-2. Create `RasterCoords` instance:
+4. Create a `RasterCoords` instance:
     ```dart
       final rc = RasterCoords(width: 1280, height: 1280);
     ```
 
-3. On your  `FlutterMap`:
+5. Use it in your `FlutterMap`:
    ```dart
    Widget build(BuildContext context) {
      return FlutterMap(
@@ -41,6 +52,7 @@ Inspired from [leaflet-rastercoords](https://github.com/commenthol/leaflet-raste
           ),
        children: [
          TileLayer(
+           // URL template for your locally hosted tiles
            urlTemplate: 'http://localhost:8000/map_tiles/{z}/{x}/{y}.png',
          ),
        ],
